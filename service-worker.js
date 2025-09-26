@@ -1,4 +1,4 @@
-const CACHE_NAME = "lmp-cache-v1";
+const CACHE_NAME = "lmp-cache-v2";
 const urlsToCache = [
   "index.html",
   "styles.css",

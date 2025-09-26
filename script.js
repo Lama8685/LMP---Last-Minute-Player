@@ -1,1 +1,1 @@
-console.log('La Mia Partita PWA caricata');
+console.log('La Mia Partita PWA ottimizzata caricata');

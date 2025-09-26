@@ -4,13 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>La Mia Partita</title>
+
+  <!-- Stile principale -->
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Manifest per PWA -->
   <link rel="manifest" href="manifest.json">
+
+  <!-- Colore barra del browser -->
+  <meta name="theme-color" content="#1a6620">
+
+  <!-- iOS support -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="La Mia Partita">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+
+  <!-- Icona di fallback -->
+  <link rel="icon" type="image/png" href="icons/icon-192.png">
+
   <script>
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker.register("service-worker.js")
-        .then(() => console.log("Service Worker registrato"))
-        .catch((err) => console.error("SW errore:", err));
+        .then(() => console.log("✅ Service Worker registrato"))
+        .catch((err) => console.error("❌ Errore SW:", err));
     }
   </script>
 </head>
@@ -32,7 +49,10 @@
         <label>Nome:<input type="text" id="nome"></label>
         <label>Telefono:<input type="text" id="telefono"></label>
         <label>Residenza:<input type="text" id="residenza"></label>
-        <button type="submit" class="btn btn-pallone"><span class="ball"></span><span class="btn-text">Salva Profilo</span></button>
+        <button type="submit" class="btn btn-pallone">
+          <span class="ball"></span>
+          <span class="btn-text">Salva Profilo</span>
+        </button>
       </form>
       <div id="profile-display"></div>
     </section>
@@ -51,7 +71,10 @@
       <h2>Cerca LMP</h2>
       <form id="cerca-form">
         <label>Raggio d'azione (km):<input type="number" id="raggio"></label>
-        <button type="submit" class="btn btn-pallone"><span class="ball"></span><span class="btn-text">Avvia Ricerca</span></button>
+        <button type="submit" class="btn btn-pallone">
+          <span class="ball"></span>
+          <span class="btn-text">Avvia Ricerca</span>
+        </button>
       </form>
       <div id="cerca-risultati"></div>
     </section>
