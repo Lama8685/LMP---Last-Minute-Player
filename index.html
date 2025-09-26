@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Mia Partita</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js")
+        .then(() => console.log("Service Worker registrato"))
+        .catch((err) => console.error("SW errore:", err));
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1><span class="ball-icon"></span> La Mia Partita</h1>
+    <nav>
+      <a href="#profilo">Profilo</a>
+      <a href="#storico">Storico Partite</a>
+      <a href="#reputazione">Reputazione</a>
+      <a href="#cerca">Cerca LMP</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="profilo" class="card">
+      <h2>Profilo</h2>
+      <form id="profile-form">
+        <label>Nome:<input type="text" id="nome"></label>
+        <label>Telefono:<input type="text" id="telefono"></label>
+        <label>Residenza:<input type="text" id="residenza"></label>
+        <button type="submit" class="btn btn-pallone"><span class="ball"></span><span class="btn-text">Salva Profilo</span></button>
+      </form>
+      <div id="profile-display"></div>
+    </section>
+
+    <section id="storico" class="card">
+      <h2>Storico Partite</h2>
+      <ul id="storico-list"></ul>
+    </section>
+
+    <section id="reputazione" class="card">
+      <h2>Reputazione</h2>
+      <div id="reputazione-score">Punteggio medio: -</div>
+    </section>
+
+    <section id="cerca" class="card">
+      <h2>Cerca LMP</h2>
+      <form id="cerca-form">
+        <label>Raggio d'azione (km):<input type="number" id="raggio"></label>
+        <button type="submit" class="btn btn-pallone"><span class="ball"></span><span class="btn-text">Avvia Ricerca</span></button>
+      </form>
+      <div id="cerca-risultati"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
